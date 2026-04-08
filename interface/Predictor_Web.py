@@ -2,9 +2,13 @@ import joblib
 import pandas as pd
 import shap
 import matplotlib.pyplot as plt
+import os
+
+DIRECTORIO_ACTUAL = os.path.dirname(os.path.abspath(__file__))
+RUTA_MODELO = os.path.join(DIRECTORIO_ACTUAL, 'Cerebro_AI', 'modelo_adop.pkl')
 
 def predecir_becas(df_limpio):  
-    modelo = joblib.load('../models/modelo_rf.pkl')
+    modelo = joblib.load(RUTA_MODELO)
     
     diccionario_niveles = {'NO': 0, 'PRO': 1, 'ELITE': 2, 'BRONCE': 3, 'PLATA': 4, 'ORO': 5}
     df_ml = df_limpio.copy()
@@ -21,8 +25,7 @@ def predecir_becas(df_limpio):
     return predicciones_texto
 
 def explicar_atleta(df_limpio, clase_predicha_texto):
-    """Genera el gráfico SHAP para justificar la decisión"""
-    modelo = joblib.load('../models/modelo_rf.pkl')
+    modelo = joblib.load(RUTA_MODELO)
     
     diccionario_niveles = {'NO': 0, 'PRO': 1, 'ELITE': 2, 'BRONCE': 3, 'PLATA': 4, 'ORO': 5}
     df_ml = df_limpio.copy()
@@ -39,6 +42,6 @@ def explicar_atleta(df_limpio, clase_predicha_texto):
     plt.figure(figsize=(8, 4))
     shap.plots.waterfall(explicacion_clase_ganadora, show=False)
     fig = plt.gcf() 
-    plt.close()
+    plt.close() 
     
     return fig

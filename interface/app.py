@@ -3,8 +3,8 @@ import pandas as pd
 import time
 import io 
 
-import preprocesamiento_Web
-import predictor
+import Procesamiento_Web
+import Predictor_Web as predictor_Web
 
 st.set_page_config(page_title="Predictor ADOP 2025", layout="wide")
 
@@ -52,8 +52,8 @@ with tab_masiva:
             with st.spinner("Prediciendo..."):
                 time.sleep(1.5) 
                 try:
-                    df_limpio = preprocesamiento_Web.limpiar_datos(df_crudo)    
-                    predicciones_texto = predictor.predecir_becas(df_limpio)
+                    df_limpio = Procesamiento_Web.limpiar_datos(df_crudo)    
+                    predicciones_texto = predictor_Web.predecir_becas(df_limpio)
                     
                     df_calculado = df_limpio.copy()
                     df_calculado['Beca Sugerida (IA)'] = predicciones_texto
@@ -147,7 +147,7 @@ with tab_individual:
                     'TENDENCIA': [input_tendencia]
                 })
                 
-                prediccion_individual = predictor.predecir_becas(datos_manuales)
+                prediccion_individual = predictor_Web.predecir_becas(datos_manuales)
                 resultado_beca = prediccion_individual[0]
                 
                 st.write("---")
@@ -157,7 +157,7 @@ with tab_individual:
                 st.write(f"### 📊 Justificación Matemática para la beca: {resultado_beca}")
                 
                 with st.spinner("Generando gráfico de explicabilidad de Oscar..."):
-                    figura_shap = predictor.explicar_atleta(datos_manuales, resultado_beca)
+                    figura_shap = predictor_Web.explicar_atleta(datos_manuales, resultado_beca)
                     
                     graf_izq, graf_centro, graf_der = st.columns([1, 2, 1])
                     with graf_centro:
@@ -165,7 +165,7 @@ with tab_individual:
                         
                     st.info(f"""
                     **Guía de lectura para el Técnico Deportivo (Evaluando la opción {resultado_beca}):**
-                    * 🟢 **Méritos:** Datos que impulsan al atleta a ganar esta beca. *(Nota técnica: La interfaz gráfica actual renderiza los méritos en el rojo nativo de SHAP. La paleta Verde/Rojo solicitada se incluirá en la v2.0).*
+                    * 🔵 **Méritos:** Datos que impulsan al atleta a ganar esta beca. *(Nota técnica: La interfaz gráfica actual renderiza los méritos en el rojo nativo de SHAP. La paleta Verde/Rojo solicitada se incluirá en la v2.0).*
                     * 🔴 **Riesgos:** Datos que le restan opciones frente a la IA. *(Actualmente renderizado en azul).*
                     * *El tamaño de la barra indica qué parámetro tuvo más peso en la decisión final.*
                     """)

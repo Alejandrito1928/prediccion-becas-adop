@@ -37,5 +37,8 @@ Este repositorio opera bajo un estricto acuerdo de confidencialidad (NDA).
 
 ---
 <div align="center">
-  <b>Desarrollado por:</b> Oscar F. González | Hector A. Novoa | Carlos Vaquero
+  <b>Desarrollado por el equipo "Atletas del Dato":</b><br><br>
+  <a href="URL_DE_TU_LINKEDIN">Héctor Alejandro. Novoa</a> | 
+  <a href="URL_DEL_LINKEDIN_DE_OSCAR">Oscar F. González</a> | 
+  <a href="URL_DEL_LINKEDIN_DE_CARLOS">Carlos Vaquero</a>
 </div>

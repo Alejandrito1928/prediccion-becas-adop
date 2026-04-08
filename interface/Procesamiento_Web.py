@@ -36,7 +36,7 @@ def clean_cat(val):
     for cat in ['ORO', 'PLATA', 'BRONCE', 'ELITE', 'PRO']:
         if cat in v:
             return cat
-        return 'NO'
+    return 'NO' 
 
 def calcular_tendencia(row):
     diccionario_niveles = {'NO': 0, 'PRO': 1, 'ELITE': 2, 'BRONCE': 3, 'PLATA': 4, 'ORO': 5}
