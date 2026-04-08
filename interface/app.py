@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 import io 
+import os
 
 import Procesamiento_Web
 import Predictor_Web as predictor_Web
@@ -16,12 +17,18 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ruta_samsung = os.path.join(BASE_DIR, "Imagenes", "samsung.png")
+ruta_cpe = os.path.join(BASE_DIR, "Imagenes", "cpe.png")
+ruta_upm = os.path.join(BASE_DIR, "Imagenes", "upm.png")
+
 cabecera = st.container()
 with cabecera:
     c1, c2, c3 = st.columns([1,1,1])
-    with c1: st.image("Imagenes/samsung.png", width=150) 
-    with c2: st.image("Imagenes/cpe.png", width=120)
-    with c3: st.image("Imagenes/upm.png", width=170)
+    # Ahora usamos las rutas calculadas dinámicamente
+    with c1: st.image(ruta_samsung, width=150) 
+    with c2: st.image(ruta_cpe, width=120)
+    with c3: st.image(ruta_upm, width=170)
 
 st.markdown("---")
 st.markdown("<h1 style='text-align: center;'>Predictor de Becas ADOP 2025-2028</h1>", unsafe_allow_html=True)
