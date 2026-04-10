@@ -21,14 +21,15 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ruta_samsung = os.path.join(BASE_DIR, "Imagenes", "samsung.png")
 ruta_cpe = os.path.join(BASE_DIR, "Imagenes", "cpe.png")
 ruta_upm = os.path.join(BASE_DIR, "Imagenes", "upm.png")
+ruta_logo = os.path.join(BASE_DIR, "Imagenes", "Logo.png")
 
 cabecera = st.container()
 with cabecera:
-    c1, c2, c3 = st.columns([1,1,1])
-    # Ahora usamos las rutas calculadas dinámicamente
-    with c1: st.image(ruta_samsung, width=150) 
-    with c2: st.image(ruta_cpe, width=120)
-    with c3: st.image(ruta_upm, width=170)
+    c1, c2, c3,c4 = st.columns([1,1,1,1])
+    with c1: st.image(ruta_samsung, width=100) 
+    with c2: st.image(ruta_cpe, width=100)
+    with c3: st.image(ruta_upm, width=100)
+    with c4: st.image(ruta_logo, width=100)
 
 st.markdown("---")
 st.markdown("<h1 style='text-align: center;'>Predictor de Becas ADOP 2025-2028</h1>", unsafe_allow_html=True)
@@ -171,10 +172,8 @@ with tab_individual:
                         st.pyplot(figura_shap)
                         
                     st.info(f"""
-                    **Guía de lectura para el Técnico Deportivo (Evaluando la opción {resultado_beca}):**
-                    * 🔵 **Méritos:** Datos que impulsan al atleta a ganar esta beca. *(Nota técnica: La interfaz gráfica actual renderiza los méritos en el rojo nativo de SHAP. La paleta Verde/Rojo solicitada se incluirá en la v2.0).*
-                    * 🔴 **Riesgos:** Datos que le restan opciones frente a la IA. *(Actualmente renderizado en azul).*
-                    * *El tamaño de la barra indica qué parámetro tuvo más peso en la decisión final.*
+                    🔴 **Méritos:** Datos que impulsan al atleta a ganar esta beca.
+                    🔵 **Riesgos:** Datos que le restan opciones frente a la IA.
                     """)
             
     st.markdown("<br><br>", unsafe_allow_html=True)
