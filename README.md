@@ -40,6 +40,6 @@ Este repositorio opera bajo un estricto acuerdo de confidencialidad (NDA).
   <b>Desarrollado por el equipo "Atletas del Dato":</b><br><br>
   <a href="https://github.com/Alejandrito1928">Héctor Alejandro Novoa</a> | 
   <a href="https://github.com/OscarFelipeGonzalez">Oscar Felipe González</a> | 
-  <a href="URL_DEL_GITHUB_DE_CARLOS">Carlos Vaquero</a>
-  
+  <a href="https://github.com/CarlosVaqueroP">Carlos Vaquero</a>
+
 </div>
