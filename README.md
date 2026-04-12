@@ -35,21 +35,6 @@ Este repositorio opera bajo un estricto acuerdo de confidencialidad (NDA).
 * `/interface`: Aplicación interactiva diseñada en Streamlit (Próximamente).
 * `/docs`: Documentación y reportes de validación cruzada.
 
-## 🛠️ Stack Tecnológico y Entorno Local
-Para garantizar la reproducibilidad exacta del modelo original, estas son las versiones estrictas utilizadas durante el desarrollo local.
-
-*text
-streamlit==1.32.0
-pandas==2.2.1
-numpy==1.26.4
-scikit-learn==1.4.1.post1
-shap==0.44.1
-joblib==1.3.2
-openpyxl==3.1.2
-matplotlib==3.8.3
-seaborn==0.13.2
-
-
 ---
 <div align="center">
   <b>Desarrollado por el equipo "Atletas del Dato":</b><br><br>
