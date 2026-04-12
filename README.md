@@ -48,6 +48,8 @@ joblib==1.3.2
 openpyxl==3.1.2
 matplotlib==3.8.3
 seaborn==0.13.2
+```
+
 ---
 <div align="center">
   <b>Desarrollado por el equipo "Atletas del Dato":</b><br><br>
